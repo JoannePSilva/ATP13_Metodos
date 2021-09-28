@@ -1,4 +1,5 @@
 package Aula13_metodos;
+import java.util.Scanner;
 
 public class calculadora {
     public static void main(String[] args) {
@@ -7,11 +8,56 @@ public class calculadora {
         
     }
     static void menu(){
-        System.out.println("\n 1-Somar \n 2-Subtrair \n 3-Multiplicar \n 4-Dividir");
+        System.out.println("\n 1-Somar \n 2-Subtrair \n 3-Multiplicar \n 4-Dividir \n 5-Sair");
         System.out.print(" Escolha uma opção:");
     }
-    static void escolha_menu(){
+    static int ler_numero(String mensagem){
+        Scanner sc = new Scanner(System.in);
+        System.out.println(mensagem);
+        int numero_lido = Integer.parseInt(sc.nextLine());
+        return numero_lido;
+    }
+
+    static void escolha_menu(int opcao){
         
+        switch(opcao){
+            case 1: 
+                int s1 = ler_numero("Digite um número:");
+                int s2 = ler_numero("Digite um número:");
+                int r = somar(s1,s2);
+                System.out.println("O resultado da soma é: "+r);
+            break;
+
+            case 2:
+                int sub1 = ler_numero("Digite um número:");
+                int sub2 = ler_numero("Digite um número:");
+                int r1 = subtrair(sub1, sub2);
+                System.out.println("O resultado da subtração é: "+r1);
+            break;
+
+            case 3:
+                int m1 = ler_numero("Digite um número:");
+                int m2 = ler_numero("Digite um número:");
+                int r2 = multiplicar(m1, m2);
+                System.out.println("O resultado da multiplicação é: "+r2);
+            break;
+
+            case 4:
+                int d1 = ler_numero("Digite um número:");
+                int d2 = ler_numero("Digite um número:");
+                int r3 = multiplicar(d1, d2);
+            System.out.println("O resultado da divisão é: "+r3);
+            break;
+            
+            case 5:
+                System.out.println("---------------Saindo--------------");
+            break;
+
+            default:
+                System.out.println("Opção Inválida");
+            break;           
+              
+        }
     }
 
    
