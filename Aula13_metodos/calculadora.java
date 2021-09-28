@@ -5,7 +5,7 @@ public class calculadora {
     public static void main(String[] args) {
        cabecalho();
        menu();
-       double opcao = ler_numero("Escolha uma opção: \n");
+       int opcao = ler_numero("Escolha uma opção: \n");
        escolha_menu(opcao);
 
         
@@ -14,15 +14,15 @@ public class calculadora {
         System.out.println("\n 1-Somar \n 2-Subtrair \n 3-Multiplicar \n 4-Dividir \n 5-Sair");
         
     }
-    static double ler_numero(String mensagem){
+    static int ler_numero(String mensagem){
         Scanner sc = new Scanner(System.in);
         System.out.print(mensagem);
-        double numero_lido = Double.parseDouble(sc.nextLine());
+        int numero_lido = Integer.parseInt(sc.nextLine());
         return numero_lido;
     }
 
     
-    static void escolha_menu(double opcao){
+    static void escolha_menu(int opcao){
             switch(opcao){
             case 1:
                 double s1 = ler_numero("Digite um número:");
@@ -49,7 +49,7 @@ public class calculadora {
                 double d1 = ler_numero("Digite um número:");
                 double d2 = ler_numero("Digite um número:");
                 double r3 = dividir(d1, d2);
-            System.out.println("O resultado da divisão é: "+r3);
+                System.out.println("O resultado da divisão é: "+r3);
             break;
             
             case 5:
