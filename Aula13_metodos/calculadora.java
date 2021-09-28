@@ -5,7 +5,7 @@ public class calculadora {
     public static void main(String[] args) {
        cabecalho();
        menu();
-       int opcao = ler_numero("Escolha uma opção: \n");
+       int opcao = (int)ler_numero("Escolha uma opção: \n");
        escolha_menu(opcao);
 
         
@@ -14,10 +14,10 @@ public class calculadora {
         System.out.println("\n 1-Somar \n 2-Subtrair \n 3-Multiplicar \n 4-Dividir \n 5-Sair");
         
     }
-    static int ler_numero(String mensagem){
+    static double ler_numero(String mensagem){
         Scanner sc = new Scanner(System.in);
         System.out.print(mensagem);
-        int numero_lido = Integer.parseInt(sc.nextLine());
+        double numero_lido = Double.parseDouble(sc.nextLine());
         return numero_lido;
     }
 
